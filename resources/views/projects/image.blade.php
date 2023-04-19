@@ -8,7 +8,7 @@
 
     <div class="w3-margin-bottom">
         @if($project->image)
-            <img src="{{asset('storage/'.$project->image)}}" width="200">
+            <img src="{{asset('storage/'.$project->image)}}" width="200px" height="300px">
         @endif
     </div>
 

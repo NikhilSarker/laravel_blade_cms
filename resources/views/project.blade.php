@@ -9,7 +9,7 @@
 
     @if ($project->image)
         <div class="w3-margin-top">
-            <img src="{{asset('storage/'.$project->image)}}" width="400">
+            <img src="{{asset('storage/'.$project->image)}}" width="300" height="300">
         </div>
     @endif
 

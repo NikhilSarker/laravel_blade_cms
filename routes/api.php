@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Type;
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Entry;
+use App\Models\Skill;
+use App\Models\Education;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,10 @@ use App\Models\Project;
 |
 */
 
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -28,6 +35,29 @@ Route::get('/types', function(){
     return $types;
 
 });
+
+
+Route::get('/entries', function(){
+
+    $entries = Entry::orderBy('learned_at')->get();
+    return $entries;
+
+});
+Route::get('/skills', function(){
+
+    $skills = Skill::orderBy('percent')->get();
+    return $skills;
+
+});
+Route::get('/educations', function(){
+
+    $educations = Education::orderBy('start_date')->get();
+    return $educations;
+
+});
+
+
+
 
 Route::get('/projects', function(){
 
